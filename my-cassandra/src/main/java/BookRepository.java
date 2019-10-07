@@ -87,6 +87,23 @@ public class BookRepository
         return books;
     }
 
+
+    public Book selectByTitle(String title)
+    {
+        StringBuilder sb =  new StringBuilder("SELECT * from ")
+                .append(KEY_SPACE_NAME).append(".").append(TABLE_NAME)
+                .append(" WHERE title ='").append(title).append("';");
+
+        final String query = sb.toString();
+        ResultSet rs = session.execute(query);
+
+        List<Book> books = new ArrayList<Book>();
+        rs.forEach(r-> {
+            books.add(new Book(r.getUUID("id"), r.getString("title"), r.getString("subject")));
+        });
+        return books.get(0);
+    }
+
     public void deleteBookByTitle(String title)
     {
         StringBuilder sb =  new StringBuilder("DELETE from ")
