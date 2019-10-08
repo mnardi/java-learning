@@ -76,7 +76,6 @@ public class BookRepositoryTest {
 
     }
 
-
     @AfterClass
     public static void drop()
     {
