@@ -19,8 +19,7 @@ public class BillingService  {
     {
         this.processor = processor;
         this.transactionLog = transactionlog;
-        this.counter = counter;
-    }
+     }
 
 
 
