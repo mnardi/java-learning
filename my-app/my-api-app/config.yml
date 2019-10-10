@@ -1,0 +1,5 @@
+responseTemplate: Command executed '%s'
+logging:
+  level: INFO
+  loggers:
+    myApiApp: DEBUG
